@@ -1,0 +1,274 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Premium Wireless Headphones",
+      "category": "Headphones",
+      "price": 199.99,
+      "rating": 4.8,
+      "reviews": 245,
+      "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&q=80",
+        "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=400&q=80",
+        "https://images.unsplash.com/photo-1487215078519-e21cc028cb29?w=400&q=80",
+        "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=400&q=80"
+      ],
+      "description": "Experience premium sound quality with active noise cancellation, 30-hour battery life, and comfortable memory foam padding.",
+      "specs": [
+        "Active Noise Cancellation",
+        "30-hour battery life",
+        "Bluetooth 5.0",
+        "Premium memory foam",
+        "Foldable design"
+      ],
+      "sku": "WH-1000-BLK",
+      "inStock": true
+    },
+    {
+      "id": 2,
+      "name": "Mechanical Gaming Keyboard",
+      "category": "Keyboards",
+      "price": 149.99,
+      "rating": 4.7,
+      "reviews": 189,
+      "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=400&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=400&q=80",
+        "https://images.unsplash.com/photo-1548681528-6a846cf17537?w=400&q=80"
+      ],
+      "description": "High-performance mechanical keyboard with RGB lighting, aluminum frame, and ultra-fast response time.",
+      "specs": [
+        "Mechanical switches",
+        "RGB lighting",
+        "1ms response time",
+        "Aluminum frame",
+        "USB-C connection"
+      ],
+      "sku": "KB-MECH-RGB",
+      "inStock": true
+    },
+    {
+      "id": 3,
+      "name": "USB-C Cable 3-Pack",
+      "category": "Cables",
+      "price": 24.99,
+      "rating": 4.5,
+      "reviews": 512,
+      "image": "https://images.unsplash.com/photo-1591290621749-7a3f3d1d4efb?w=400&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1591290621749-7a3f3d1d4efb?w=400&q=80",
+        "https://images.unsplash.com/photo-1625948515291-69613efd103f?w=400&q=80"
+      ],
+      "description": "Durable and fast-charging USB-C braided cables in 3 different lengths.",
+      "specs": [
+        "3 lengths: 3ft / 6ft / 10ft",
+        "Fast charging support",
+        "Braided design",
+        "USB-IF certified",
+        "Lifetime warranty"
+      ],
+      "sku": "CABLE-USBC-3PK",
+      "inStock": true
+    },
+    {
+      "id": 4,
+      "name": "Premium Digital Camera",
+      "category": "Cameras",
+      "price": 349.99,
+      "rating": 4.6,
+      "reviews": 678,
+      "image": "https://images.unsplash.com/photo-1609034227505-5876f6aa4e90?w=400&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1609034227505-5876f6aa4e90?w=400&q=80"
+      ],
+      "description": "High-quality compact digital camera with 4K video recording and fast autofocus.",
+      "specs": [
+        "4K video recording",
+        "Fast autofocus",
+        "20MP sensor",
+        "WiFi + Bluetooth",
+        "Lightweight body"
+      ],
+      "sku": "CAM-PREM-4K",
+      "inStock": true
+    },
+    {
+      "id": 5,
+      "name": "Smart Watch",
+      "category": "Watches",
+      "price": 139.99,
+      "rating": 4.7,
+      "reviews": 423,
+      "image": "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400&q=80"
+      ],
+      "description": "Feature-packed smartwatch with heart-rate tracking, notifications, GPS, and long battery life.",
+      "specs": [
+        "Heart-rate monitor",
+        "Built-in GPS",
+        "Water resistant",
+        "Sleep tracking",
+        "7-day battery life"
+      ],
+      "sku": "WATCH-SMART-2025",
+      "inStock": true
+    },
+    {
+      "id": 6,
+      "name": "Studio Monitor Headphones",
+      "category": "Headphones",
+      "price": 279.99,
+      "rating": 4.9,
+      "reviews": 134,
+      "image": "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=400&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=400&q=80"
+      ],
+      "description": "Professional studio headphones with flat frequency response and high accuracy.",
+      "specs": [
+        "Flat frequency response",
+        "Professional monitoring",
+        "Detachable cables",
+        "Over-ear design",
+        "Calibrated drivers"
+      ],
+      "sku": "HP-STUDIO-PRO",
+      "inStock": true
+    },
+    {
+      "id": 7,
+      "name": "Compact Bluetooth Speaker",
+      "category": "Speakers",
+      "price": 79.99,
+      "rating": 4.5,
+      "reviews": 892,
+      "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&q=80"
+      ],
+      "description": "Portable waterproof speaker with 360° sound and 20-hour battery life.",
+      "specs": [
+        "360° sound",
+        "IPX7 waterproof",
+        "20-hour battery",
+        "Compact size",
+        "Built-in microphone"
+      ],
+      "sku": "SP-BT-360",
+      "inStock": true
+    },
+    {
+      "id": 8,
+      "name": "Ergonomic Wireless Mouse",
+      "category": "Mice",
+      "price": 59.99,
+      "rating": 4.6,
+      "reviews": 345,
+      "image": "https://images.unsplash.com/photo-1527814050087-3793815479db?w=400&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1527814050087-3793815479db?w=400&q=80"
+      ],
+      "description": "Ergonomic mouse designed for long-term comfort with adjustable DPI.",
+      "specs": [
+        "Ergonomic design",
+        "2.4GHz wireless",
+        "Adjustable DPI",
+        "7 buttons",
+        "3-year battery life"
+      ],
+      "sku": "MOUSE-ERGO-BLK",
+      "inStock": true
+    },
+    {
+      "id": 9,
+      "name": "Compact Keyboard",
+      "category": "Keyboards",
+      "price": 19.99,
+      "rating": 4.7,
+      "reviews": 567,
+      "image": "https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=400&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=400&q=80"
+      ],
+      "description": "Compact and lightweight keyboard designed for everyday use.",
+      "specs": [
+        "Slim design",
+        "Low-profile keys",
+        "Silent typing",
+        "Plug and play",
+        "Full-size layout"
+      ],
+      "sku": "KB-COMPACT-01",
+      "inStock": true
+    },
+    {
+      "id": 10,
+      "name": "Premium Wireless Mouse",
+      "category": "Mice",
+      "price": 44.99,
+      "rating": 4.8,
+      "reviews": 289,
+      "image": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400&q=80"
+      ],
+      "description": "High-precision wireless mouse with ergonomic shape and adjustable DPI.",
+      "specs": [
+        "High precision sensor",
+        "Silent buttons",
+        "Ergonomic grip",
+        "Adjustable DPI",
+        "Rechargeable battery"
+      ],
+      "sku": "MOUSE-PREM-2025",
+      "inStock": true
+    },
+    {
+      "id": 11,
+      "name": "Power Bank 20000mAh",
+      "category": "Chargers",
+      "price": 49.99,
+      "rating": 4.6,
+      "reviews": 756,
+      "image": "https://images.unsplash.com/photo-1609592088962-d3dbe1c714a6?w=400&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1609592088962-d3dbe1c714a6?w=400&q=80",
+        "https://images.unsplash.com/photo-1585438784149-2d36ed13c0ff?w=400&q=80"
+      ],
+      "description": "High-capacity power bank with fast charging and dual USB-C outputs.",
+      "specs": [
+        "20000mAh",
+        "65W fast charging",
+        "Dual USB-C ports",
+        "LED display",
+        "Compact design"
+      ],
+      "sku": "BANK-20000-FAST",
+      "inStock": true
+    },
+    {
+      "id": 12,
+      "name": "Screen Protector (3-Pack)",
+      "category": "Accessories",
+      "price": 14.99,
+      "rating": 4.4,
+      "reviews": 1203,
+      "image": "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400&q=80"
+      ],
+      "description": "Tempered glass protectors with easy installation and anti-bubble coating.",
+      "specs": [
+        "9H hardness",
+        "Pack of 3",
+        "Easy installation kit",
+        "Bubble-free",
+        "HD transparency"
+      ],
+      "sku": "SP-3PK-GLASS",
+      "inStock": true
+    }
+  ]
+}

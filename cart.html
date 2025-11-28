@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - TechHub</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="navbar__container">
+                <div class="navbar__logo">
+                    <a href="index.html">TechHub</a>
+                </div>
+                <ul class="navbar__menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="navbar__actions">
+                    <a href="shop.html" class="navbar__btn">Continue Shopping</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Cart Section -->
+    <main class="cart-page">
+        <div class="cart-page__container">
+            <h1>Shopping Cart</h1>
+
+            <div class="cart-content">
+                <!-- Cart Items -->
+                <div class="cart-items">
+                    <div id="empty-cart-message" class="empty-cart" style="display: none;">
+                        <p>Your cart is empty</p>
+                        <a href="shop.html" class="btn btn--primary">Continue Shopping</a>
+                    </div>
+                    <table id="cart-table" class="cart-table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart-items-list">
+                            <!-- Cart items loaded by JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Cart Summary -->
+                <aside class="cart-summary">
+                    <h3>Order Summary</h3>
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="subtotal">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping</span>
+                        <span id="shipping-cost">Free</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Tax (estimated)</span>
+                        <span id="tax-cost">$0.00</span>
+                    </div>
+                    <div class="summary-row summary-row--total">
+                        <span>Total</span>
+                        <span id="total-price">$0.00</span>
+                    </div>
+
+                    <div class="coupon-input">
+                        <input type="text" id="coupon-code" placeholder="Coupon code" class="coupon-input__field">
+                        <button id="apply-coupon" class="coupon-input__btn">Apply</button>
+                    </div>
+
+                    <button id="checkout-btn" class="btn btn--primary btn--full">Proceed to Checkout</button>
+                    <a href="shop.html" class="btn btn--secondary btn--full">Continue Shopping</a>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="modal" style="display: none;">
+        <div class="modal__content">
+            <div class="modal__header">
+                <h2>Checkout</h2>
+                <button id="close-modal" class="modal__close">&times;</button>
+            </div>
+
+            <form id="checkout-form" class="checkout-form">
+                <!-- Shipping Info -->
+                <fieldset class="form-section">
+                    <legend>Shipping Information</legend>
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="checkout-name" required class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="checkout-email" required class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <input type="text" id="checkout-address" required class="form-input">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>City</label>
+                            <input type="text" id="checkout-city" required class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label>State</label>
+                            <input type="text" id="checkout-state" required class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label>ZIP Code</label>
+                            <input type="text" id="checkout-zip" required class="form-input">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- Payment Info -->
+                <fieldset class="form-section">
+                    <legend>Payment Information</legend>
+                    <div class="form-group">
+                        <label>Card Number</label>
+                        <input type="text" id="checkout-card" placeholder="1234 5678 9012 3456" required class="form-input">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Expiration Date</label>
+                            <input type="text" id="checkout-expiry" placeholder="MM/YY" required class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label>CVV</label>
+                            <input type="text" id="checkout-cvv" placeholder="123" required class="form-input">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="btn btn--primary btn--full">Complete Purchase</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmation-modal" class="modal" style="display: none;">
+        <div class="modal__content modal__content--small">
+            <div class="modal__header">
+                <h2>Order Confirmed!</h2>
+            </div>
+            <div class="confirmation-message">
+                <p class="confirmation-message__title">Thank you for your order!</p>
+                <p class="confirmation-message__text">Your order has been received and is being processed.</p>
+                <p class="confirmation-message__details">
+                    Order ID: <strong id="order-id"></strong><br>
+                    A confirmation email has been sent to <strong id="confirmation-email"></strong>
+                </p>
+                <button id="continue-shopping-btn" class="btn btn--primary btn--full">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__grid">
+                <div class="footer__col">
+                    <h4>About TechHub</h4>
+                    <p>Your trusted source for premium tech accessories since 2020.</p>
+                </div>
+                <div class="footer__col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#shipping">Shipping Info</a></li>
+                        <li><a href="#returns">Returns</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for exclusive deals and new arrivals</p>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Your email" class="newsletter__input">
+                        <button class="newsletter__btn">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 TechHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

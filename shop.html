@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - TechHub</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="navbar__container">
+                <div class="navbar__logo">
+                    <a href="index.html">TechHub</a>
+                </div>
+                <ul class="navbar__menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="navbar__actions">
+                    <button id="search-toggle" class="navbar__btn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M14 14l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <a href="cart.html" class="navbar__cart">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M3 2h1l1.5 9h10l1-5h-12l-1-2h14v1l-2 10h-11l-1.5-13z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        </svg>
+                        <span id="cart-count" class="cart-badge">0</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <div id="search-bar" class="search-bar" style="display: none;">
+            <input type="text" id="search-input" placeholder="Search products..." class="search-bar__input">
+        </div>
+    </header>
+
+    <!-- Shop Container -->
+    <main class="shop">
+        <div class="shop__container">
+            <!-- Sidebar Filters -->
+            <aside class="filters">
+                <h3 class="filters__title">Filters</h3>
+                
+                <div class="filter-group">
+                    <h4 class="filter-group__title">Category</h4>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" data-filter="category" value="all" checked>
+                            <span>All Products</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" data-filter="category" value="Headphones">
+                            <span>Headphones</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" data-filter="category" value="Keyboards">
+                            <span>Keyboards</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" data-filter="category" value="Cables">
+                            <span>Cables</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" data-filter="category" value="Cases">
+                            <span>Cases</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" data-filter="category" value="Chargers">
+                            <span>Chargers</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" data-filter="category" value="Accessories">
+                            <span>Accessories</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" data-filter="category" value="Cameras">
+                            <span>Cameras</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" data-filter="category" value="Watches">
+                            <span>Watches</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" data-filter="category" value="Speakers">
+                            <span>Speakers</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" data-filter="category" value="Mice">
+                            <span>Mice</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h4 class="filter-group__title">Price Range</h4>
+                    <div class="price-slider">
+                        <input type="range" min="0" max="500" value="500" id="price-range" class="price-slider__input">
+                        <p class="price-slider__display">Up to $<span id="price-value">500</span></p>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h4 class="filter-group__title">Sort By</h4>
+                    <select id="sort-select" class="filter-select">
+                        <option value="featured">Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="newest">Newest</option>
+                    </select>
+                </div>
+
+                <button id="clear-filters" class="filters__reset">Clear Filters</button>
+            </aside>
+
+            <!-- Products Grid -->
+            <section class="products-section">
+                <div class="products-section__header">
+                    <h2>All Products</h2>
+                    <p id="product-count" class="products-section__count">Loading...</p>
+                </div>
+                <div id="products-grid" class="products-grid">
+                    <!-- Products loaded by JS -->
+                </div>
+                <div id="no-products" class="no-products" style="display: none;">
+                    <p>No products found. Try adjusting your filters.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__grid">
+                <div class="footer__col">
+                    <h4>About TechHub</h4>
+                    <p>Your trusted source for premium tech accessories since 2020.</p>
+                </div>
+                <div class="footer__col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#shipping">Shipping Info</a></li>
+                        <li><a href="#returns">Returns</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for exclusive deals and new arrivals</p>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Your email" class="newsletter__input">
+                        <button class="newsletter__btn">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 TechHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

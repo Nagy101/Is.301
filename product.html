@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - TechHub</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="navbar__container">
+                <div class="navbar__logo">
+                    <a href="index.html">TechHub</a>
+                </div>
+                <ul class="navbar__menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="navbar__actions">
+                    <button id="search-toggle" class="navbar__btn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M14 14l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <a href="cart.html" class="navbar__cart">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M3 2h1l1.5 9h10l1-5h-12l-1-2h14v1l-2 10h-11l-1.5-13z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        </svg>
+                        <span id="cart-count" class="cart-badge">0</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <div id="search-bar" class="search-bar" style="display: none;">
+            <input type="text" id="search-input" placeholder="Search products..." class="search-bar__input">
+        </div>
+    </header>
+
+    <!-- Product Detail Section -->
+    <main class="product-detail">
+        <div class="product-detail__container">
+            <!-- Image Gallery -->
+            <div class="product-gallery">
+                <div class="gallery-main">
+                    <img id="main-image" src="/placeholder.svg" alt="Product" class="gallery-main__image">
+                </div>
+                <div class="gallery-thumbs" id="gallery-thumbs">
+                    <!-- Thumbnails loaded by JS -->
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div class="product-info">
+                <a href="shop.html" class="product-info__back">&larr; Back to Shop</a>
+                <h1 id="product-title" class="product-info__title"></h1>
+                <div class="product-info__rating">
+                    <span class="product-info__stars" id="product-stars">★★★★★</span>
+                    <span class="product-info__reviews">(<span id="review-count">245</span> reviews)</span>
+                </div>
+
+                <div class="product-info__price">
+                    <span class="price" id="product-price"></span>
+                </div>
+
+                <p id="product-description" class="product-info__description"></p>
+
+                <div class="product-info__specs">
+                    <h3>Specifications</h3>
+                    <ul id="product-specs">
+                        <!-- Specs loaded by JS -->
+                    </ul>
+                </div>
+
+                <div class="product-info__actions">
+                    <div class="quantity-selector">
+                        <button id="qty-decrease" class="qty-btn">−</button>
+                        <input type="number" id="qty-input" value="1" min="1" max="99" class="qty-input">
+                        <button id="qty-increase" class="qty-btn">+</button>
+                    </div>
+                    <button id="add-to-cart-btn" class="btn btn--primary">Add to Cart</button>
+                </div>
+
+                <div class="product-info__details">
+                    <p><strong>SKU:</strong> <span id="product-sku"></span></p>
+                    <p><strong>In Stock:</strong> <span id="product-stock" class="stock-status stock-status--in">Yes</span></p>
+                    <p><strong>Free Shipping:</strong> On orders over $50</p>
+                </div>
+
+                <div class="product-info__share">
+                    <p>Share this product:</p>
+                    <button class="share-btn">Facebook</button>
+                    <button class="share-btn">Twitter</button>
+                    <button class="share-btn">Copy Link</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Related Products -->
+    <section class="related">
+        <div class="related__container">
+            <h2 class="related__title">You Might Also Like</h2>
+            <div id="related-products" class="products-grid">
+                <!-- Related products loaded by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__grid">
+                <div class="footer__col">
+                    <h4>About TechHub</h4>
+                    <p>Your trusted source for premium tech accessories since 2020.</p>
+                </div>
+                <div class="footer__col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#shipping">Shipping Info</a></li>
+                        <li><a href="#returns">Returns</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for exclusive deals and new arrivals</p>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Your email" class="newsletter__input">
+                        <button class="newsletter__btn">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 TechHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
