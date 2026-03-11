@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - TechHub</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
@@ -14,16 +16,20 @@
                 <div class="navbar__logo">
                     <a href="index.html">TechHub</a>
                 </div>
+                <button id="mobile-menu-btn" aria-label="Toggle Menu">☰</button>
                 <ul class="navbar__menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="shop.html">Shop</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html" style="color:var(--brand-primary);">Contact</a></li>
                 </ul>
                 <div class="navbar__actions">
-                    <a href="cart.html" class="navbar__cart">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M3 2h1l1.5 9h10l1-5h-12l-1-2h14v1l-2 10h-11l-1.5-13z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                    <a href="cart.html" class="navbar__cart" aria-label="Cart">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M4 4h2l2 11h10l2-7H6" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                            <circle cx="9" cy="19" r="1.5" stroke="currentColor" fill="none" stroke-width="2" />
+                            <circle cx="17" cy="19" r="1.5" stroke="currentColor" fill="none" stroke-width="2" />
                         </svg>
                         <span id="cart-count" class="cart-badge">0</span>
                     </a>
@@ -34,54 +40,79 @@
 
     <!-- Contact Section -->
     <main class="contact-page">
-        <div class="contact-page__container">
-            <section class="contact-hero">
-                <h1>Get in Touch</h1>
-                <p>We'd love to hear from you. Send us a message!</p>
-            </section>
-
-            <div class="contact-content">
-                <div class="contact-form">
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <label>Your Name</label>
-                            <input type="text" required class="form-input">
-                        </div>
-                        <div class="form-group">
-                            <label>Email Address</label>
-                            <input type="email" required class="form-input">
-                        </div>
-                        <div class="form-group">
-                            <label>Subject</label>
-                            <input type="text" required class="form-input">
-                        </div>
-                        <div class="form-group">
-                            <label>Message</label>
-                            <textarea rows="6" required class="form-textarea"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn--primary">Send Message</button>
-                    </form>
+        <div class="contact-container">
+            <!-- Contact Info Sidebar -->
+            <div class="contact-info">
+                <div>
+                    <h1 class="text-gradient" style="font-size: 3.5rem; margin-bottom: 1rem;">Get in touch.</h1>
+                    <p style="font-size: 1.125rem; margin-bottom: 3rem;">Have a question about an order, our products,
+                        or just want to say hello? Our team is always here to help you.</p>
                 </div>
 
-                <div class="contact-info">
-                    <div class="info-block">
-                        <h3>Email</h3>
-                        <p><a href="mailto:support@techhub.com">support@techhub.com</a></p>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <h4 style="font-size: 1.25rem;">Headquarters</h4>
+                        <p>123 Innovation Drive<br>Tech Valley, CA 94043</p>
                     </div>
-                    <div class="info-block">
-                        <h3>Phone</h3>
-                        <p><a href="tel:+18005551234">1-800-555-1234</a></p>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div>
+                        <h4 style="font-size: 1.25rem;">Email Us</h4>
+                        <p>support@techhub.com<br>sales@techhub.com</p>
                     </div>
-                    <div class="info-block">
-                        <h3>Address</h3>
-                        <p>123 Tech Street<br>Silicon Valley, CA 94025</p>
-                    </div>
-                    <div class="info-block">
-                        <h3>Business Hours</h3>
-                        <p>Monday - Friday: 9 AM - 6 PM PST<br>Saturday - Sunday: 10 AM - 4 PM PST</p>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div>
+                        <h4 style="font-size: 1.25rem;">Call Us</h4>
+                        <p>+1 (800) 123-4567<br>Mon-Fri, 9am - 6pm EST</p>
                     </div>
                 </div>
             </div>
+
+            <!-- Contact Form -->
+            <form id="contact-form" class="contact-form">
+                <h3 style="font-size: 1.75rem; margin-bottom: 1rem;">Send us a message</h3>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                    <div class="form-group">
+                        <label for="name">First Name</label>
+                        <input type="text" id="name" class="form-input" required placeholder="John">
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" class="form-input" required placeholder="Doe">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-input" required placeholder="john@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <select id="subject" class="form-input">
+                        <option value="general" style="background:var(--bg-surface);">General Inquiry</option>
+                        <option value="support" style="background:var(--bg-surface);">Technical Support</option>
+                        <option value="order" style="background:var(--bg-surface);">Order Status</option>
+                        <option value="business" style="background:var(--bg-surface);">Business/Partnership</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" class="form-input" required
+                        placeholder="How can we help you today?"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn--primary" style="padding: 1rem; margin-top: 1rem;">Send
+                    Message</button>
+            </form>
         </div>
     </main>
 
@@ -90,8 +121,8 @@
         <div class="footer__container">
             <div class="footer__grid">
                 <div class="footer__col">
-                    <h4>About TechHub</h4>
-                    <p>Your trusted source for premium tech accessories since 2020.</p>
+                    <h4 class="text-gradient">TechHub</h4>
+                    <p>Your trusted source for premium, cutting-edge tech accessories since 2020.</p>
                 </div>
                 <div class="footer__col">
                     <h4>Quick Links</h4>
@@ -104,26 +135,27 @@
                 <div class="footer__col">
                     <h4>Customer Service</h4>
                     <ul>
-                        <li><a href="#shipping">Shipping Info</a></li>
-                        <li><a href="#returns">Returns</a></li>
-                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer__col">
                     <h4>Newsletter</h4>
                     <p>Subscribe for exclusive deals and new arrivals</p>
-                    <div class="newsletter">
-                        <input type="email" placeholder="Your email" class="newsletter__input">
-                        <button class="newsletter__btn">Subscribe</button>
-                    </div>
+                    <form class="newsletter">
+                        <input type="email" placeholder="Your email address" class="newsletter__input" required>
+                        <button type="submit" class="newsletter__btn">Join</button>
+                    </form>
                 </div>
             </div>
             <div class="footer__bottom">
-                <p>&copy; 2025 TechHub. All rights reserved.</p>
+                <p>&copy; 2026 TechHub. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="js/app.js"></script>
 </body>
+
 </html>

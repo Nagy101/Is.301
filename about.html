@@ -1,11 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - TechHub</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .about-hero {
+            text-align: center;
+            padding: 6rem 1.5rem;
+            background: radial-gradient(circle at center, rgba(59, 130, 246, 0.15) 0%, transparent 60%);
+        }
+
+        .about-hero h1 {
+            font-size: 4rem;
+            background: var(--brand-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .about-hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .about-content {
+            display: grid;
+            gap: 4rem;
+            padding: 4rem 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about-section {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            padding: 3rem;
+            border-radius: var(--radius-lg);
+            transition: 0.3s;
+        }
+
+        .about-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        .about-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+        }
+
+        .about-section p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .about-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .about-list li {
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+        }
+
+        .about-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--brand-primary);
+            font-weight: bold;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .stat {
+            background: rgba(59, 130, 246, 0.05);
+            padding: 2.5rem 1.5rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
+
+        .stat h3 {
+            font-size: 3rem;
+            color: var(--brand-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat p {
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: #fff;
+            margin: 0;
+        }
+    </style>
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
@@ -14,16 +124,20 @@
                 <div class="navbar__logo">
                     <a href="index.html">TechHub</a>
                 </div>
+                <button id="mobile-menu-btn" aria-label="Toggle Menu">☰</button>
                 <ul class="navbar__menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="shop.html">Shop</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="about.html" style="color:var(--brand-primary);">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
                 <div class="navbar__actions">
-                    <a href="cart.html" class="navbar__cart">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M3 2h1l1.5 9h10l1-5h-12l-1-2h14v1l-2 10h-11l-1.5-13z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                    <a href="cart.html" class="navbar__cart" aria-label="Cart">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M4 4h2l2 11h10l2-7H6" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                            <circle cx="9" cy="19" r="1.5" stroke="currentColor" fill="none" stroke-width="2" />
+                            <circle cx="17" cy="19" r="1.5" stroke="currentColor" fill="none" stroke-width="2" />
                         </svg>
                         <span id="cart-count" class="cart-badge">0</span>
                     </a>
@@ -34,32 +148,41 @@
 
     <!-- About Section -->
     <main class="about-page">
-        <div class="about-page__container">
+        <div class="container">
             <section class="about-hero">
-                <h1>About TechHub</h1>
-                <p>Delivering premium tech accessories since 2020</p>
+                <h1>Our Vision</h1>
+                <p>Delivering premium technology accessories explicitly designed for the modern lifestyle since 2020.
+                </p>
             </section>
 
             <section class="about-content">
                 <div class="about-section">
                     <h2>Our Story</h2>
-                    <p>Founded in 2020, TechHub started with a simple mission: to provide tech enthusiasts with access to premium, high-quality accessories at competitive prices. What began as a small online store has grown into a trusted destination for tech professionals and enthusiasts alike.</p>
+                    <p>Founded in 2020 by a team of obsessive tech enthusiasts, TechHub began with a singular mission:
+                        bridge the gap between high-end accessories and accessibility. What started as a small online
+                        storefront quickly scaled into a globally recognized hub for professionals and hobbyists seeking
+                        unparalleled tech gear.</p>
                 </div>
 
                 <div class="about-section">
                     <h2>Our Mission</h2>
-                    <p>We believe that great technology shouldn't be expensive. Our mission is to democratize access to premium tech accessories by offering curated products from world-leading brands at fair prices, backed by exceptional customer service.</p>
+                    <p>We firmly believe that utilizing top-tier technology should not be accompanied by prohibitively
+                        expensive price tags. Our mission revolves around democratizing access to premium tech
+                        accessories. We meticulously curate our offerings from industry-leading manufacturers to
+                        guarantee uncompromised quality.</p>
                 </div>
 
                 <div class="about-section">
                     <h2>Why Choose TechHub?</h2>
                     <ul class="about-list">
-                        <li>Curated Selection: We handpick each product for quality and value</li>
-                        <li>Competitive Pricing: Direct relationships with manufacturers ensure great prices</li>
-                        <li>Fast Shipping: Free shipping on orders over $50, 2-day delivery</li>
-                        <li>Customer Support: Expert assistance available 24/7</li>
-                        <li>Easy Returns: 30-day money-back guarantee on all products</li>
-                        <li>Warranty: Extended warranty options on select products</li>
+                        <li><strong>Curated Selection:</strong> Every product undergoes a rigorous multi-stage quality
+                            review.</li>
+                        <li><strong>Competitive Pricing:</strong> Direct partnerships with factories ensure
+                            industry-beating rates.</li>
+                        <li><strong>Fast Shipping:</strong> Enjoy free global shipping on orders exceeding $50.</li>
+                        <li><strong>World-Class Support:</strong> Dedicated tech experts available 24/7.</li>
+                        <li><strong>Risk-Free Returns:</strong> No-questions-asked 30-day money-back guarantee.</li>
+                        <li><strong>Extended Warranty:</strong> Complete peace of mind on select flagship products.</li>
                     </ul>
                 </div>
 
@@ -70,15 +193,15 @@
                     </div>
                     <div class="stat">
                         <h3>500+</h3>
-                        <p>Products Available</p>
+                        <p>Premium Products</p>
                     </div>
                     <div class="stat">
-                        <h3>4.8★</h3>
+                        <h3>4.9★</h3>
                         <p>Average Rating</p>
                     </div>
                     <div class="stat">
                         <h3>24/7</h3>
-                        <p>Customer Support</p>
+                        <p>Expert Support</p>
                     </div>
                 </div>
             </section>
@@ -90,8 +213,8 @@
         <div class="footer__container">
             <div class="footer__grid">
                 <div class="footer__col">
-                    <h4>About TechHub</h4>
-                    <p>Your trusted source for premium tech accessories since 2020.</p>
+                    <h4 class="text-gradient">TechHub</h4>
+                    <p>Your trusted source for premium, cutting-edge tech accessories since 2020.</p>
                 </div>
                 <div class="footer__col">
                     <h4>Quick Links</h4>
@@ -104,26 +227,27 @@
                 <div class="footer__col">
                     <h4>Customer Service</h4>
                     <ul>
-                        <li><a href="#shipping">Shipping Info</a></li>
-                        <li><a href="#returns">Returns</a></li>
-                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer__col">
                     <h4>Newsletter</h4>
                     <p>Subscribe for exclusive deals and new arrivals</p>
-                    <div class="newsletter">
-                        <input type="email" placeholder="Your email" class="newsletter__input">
-                        <button class="newsletter__btn">Subscribe</button>
-                    </div>
+                    <form class="newsletter">
+                        <input type="email" placeholder="Your email address" class="newsletter__input" required>
+                        <button type="submit" class="newsletter__btn">Join</button>
+                    </form>
                 </div>
             </div>
             <div class="footer__bottom">
-                <p>&copy; 2025 TechHub. All rights reserved.</p>
+                <p>&copy; 2026 TechHub. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="js/app.js"></script>
 </body>
+
 </html>

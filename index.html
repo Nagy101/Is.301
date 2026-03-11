@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechHub - Premium Tech Accessories</title>
+    <!-- Modern, completely overhauled CSS -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -14,6 +15,7 @@
                 <div class="navbar__logo">
                     <a href="index.html">TechHub</a>
                 </div>
+                <button id="mobile-menu-btn" aria-label="Toggle Menu">☰</button>
                 <ul class="navbar__menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="shop.html">Shop</a></li>
@@ -21,66 +23,73 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
                 <div class="navbar__actions">
-                    <button id="search-toggle" class="navbar__btn">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/>
-                            <path d="M14 14l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <button id="search-toggle" class="navbar__btn" aria-label="Search">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+                            <path d="M20 20L16 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                         </svg>
                     </button>
-                    <a href="cart.html" class="navbar__cart">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M3 2h1l1.5 9h10l1-5h-12l-1-2h14v1l-2 10h-11l-1.5-13z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                    <a href="cart.html" class="navbar__cart" aria-label="Cart">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M4 4h2l2 11h10l2-7H6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="9" cy="19" r="1.5" stroke="currentColor" fill="none" stroke-width="2"/>
+                            <circle cx="17" cy="19" r="1.5" stroke="currentColor" fill="none" stroke-width="2"/>
                         </svg>
                         <span id="cart-count" class="cart-badge">0</span>
                     </a>
                 </div>
             </div>
         </nav>
-        <!-- Search Bar -->
-        <div id="search-bar" class="search-bar" style="display: none;">
-            <input type="text" id="search-input" placeholder="Search products..." class="search-bar__input">
+        <!-- Search Bar Overlay -->
+        <div id="search-bar" class="search-bar">
+            <div class="search-bar__container">
+                <input type="text" id="search-input" placeholder="Search products, brands, categories..." class="search-bar__input">
+            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero__content">
-            <h1 class="hero__title">Premium Tech Accessories</h1>
-            <p class="hero__subtitle">Elevate your digital lifestyle with cutting-edge tech gear</p>
-            <a href="shop.html" class="hero__btn">Shop Now</a>
+            <h1 class="text-gradient">Premium Tech Accessories.</h1>
+            <p>Elevate your digital lifestyle with cutting-edge tech gear, designed for professionals and enthusiasts alike.</p>
+            <a href="shop.html" class="btn btn--primary" style="margin-top: 1rem;">
+                Explore Collection
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </a>
         </div>
         <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80" alt="Premium headphones" class="hero__image">
     </section>
 
     <!-- Featured Products -->
-    <section class="featured">
-        <div class="featured__container">
-            <h2 class="featured__title">Featured Products</h2>
+    <section class="section featured">
+        <div class="container featured__container">
+            <h2 class="featured__title text-center">Featured Products</h2>
             <div id="featured-grid" class="products-grid">
-                <!-- Products loaded by JS -->
+                <!-- Products loaded dynamically by JS -->
             </div>
         </div>
     </section>
 
     <!-- Categories -->
-    <section class="categories">
-        <div class="categories__container">
-            <h2 class="categories__title">Shop by Category</h2>
+    <section class="section categories">
+        <div class="container categories__container">
+            <h2 class="categories__title text-center">Shop by Category</h2>
             <div class="categories__grid">
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&q=80" alt="Headphones">
+                <div class="category-card" onclick="window.location.href='shop.html?search=Headphones'">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&q=80" alt="Headphones">
                     <h3>Headphones</h3>
                 </div>
-                <div class="category-card">
-                    <img src="https://www.whatgeek.com/cdn/shop/products/RoyalaxeL98MechanicalKeyboardwithTFTDisplay_3_700x.jpg?v=1670224366" alt="Keyboards">
+                <div class="category-card" onclick="window.location.href='shop.html?search=Keyboards'">
+                    <img src="https://images.unsplash.com/photo-1595225476474-87563907a212?w=600&q=80" alt="Keyboards">
                     <h3>Keyboards</h3>
                 </div>
-                <div class="category-card">
-                    <img src="https://tse4.mm.bing.net/th/id/OIP.xQSPnOLfFrD-AazrxXihygHaJQ?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Cables">
-                    <h3>Cables & Adapters</h3>
+                <div class="category-card" onclick="window.location.href='shop.html?search=Cables'">
+                    <img src="https://images.unsplash.com/photo-1615526659714-ab185fcbaef8?w=600&q=80" alt="Cables & Adapters">
+                    <h3>Cables</h3>
                 </div>
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1609034227505-5876f6aa4e90?w=300&q=80" alt="Cases">
+                <div class="category-card" onclick="window.location.href='shop.html?search=Cases'">
+                    <img src="https://images.unsplash.com/photo-1609034227505-5876f6aa4e90?w=600&q=80" alt="Device Cases">
                     <h3>Device Cases</h3>
                 </div>
             </div>
@@ -88,23 +97,23 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="testimonials__container">
-            <h2 class="testimonials__title">What Our Customers Say</h2>
+    <section class="section testimonials">
+        <div class="container testimonials__container">
+            <h2 class="testimonials__title text-center">What Our Customers Say</h2>
             <div class="testimonials__grid">
                 <div class="testimonial">
                     <div class="testimonial__stars">★★★★★</div>
-                    <p class="testimonial__text">"Exceptional quality and fast shipping. The headphones exceeded my expectations!"</p>
+                    <p class="testimonial__text">"Exceptional quality and fast shipping. The headphones exceeded my expectations! Best experience I've had."</p>
                     <p class="testimonial__author">— Sarah M.</p>
                 </div>
                 <div class="testimonial">
-                    <div class="testimonial__stars">★★★★★</div>
-                    <p class="testimonial__text">"Best tech store online. Their customer service is outstanding and prices are competitive."</p>
+                    <div class="testimonial__stars">★★★★☆</div>
+                    <p class="testimonial__text">"Best tech store online. Their customer service is outstanding, and the prices are highly competitive."</p>
                     <p class="testimonial__author">— James T.</p>
                 </div>
                 <div class="testimonial">
                     <div class="testimonial__stars">★★★★★</div>
-                    <p class="testimonial__text">"I've been a customer for years. TechHub never disappoints with quality products."</p>
+                    <p class="testimonial__text">"I've been a customer for years. TechHub never disappoints with premium quality products."</p>
                     <p class="testimonial__author">— Emily R.</p>
                 </div>
             </div>
@@ -116,8 +125,8 @@
         <div class="footer__container">
             <div class="footer__grid">
                 <div class="footer__col">
-                    <h4>About TechHub</h4>
-                    <p>Your trusted source for premium tech accessories since 2020.</p>
+                    <h4 class="text-gradient">TechHub</h4>
+                    <p>Your trusted source for premium, cutting-edge tech accessories since 2020. Elevating standards.</p>
                 </div>
                 <div class="footer__col">
                     <h4>Quick Links</h4>
@@ -130,22 +139,22 @@
                 <div class="footer__col">
                     <h4>Customer Service</h4>
                     <ul>
-                        <li><a href="#shipping">Shipping Info</a></li>
-                        <li><a href="#returns">Returns</a></li>
-                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer__col">
-                    <h4>Newsletter</h4>
-                    <p>Subscribe for exclusive deals and new arrivals</p>
-                    <div class="newsletter">
-                        <input type="email" placeholder="Your email" class="newsletter__input">
-                        <button class="newsletter__btn">Subscribe</button>
-                    </div>
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe for exclusive deals and new arrivals.</p>
+                    <form class="newsletter">
+                        <input type="email" placeholder="Your email address" class="newsletter__input" required>
+                        <button type="submit" class="newsletter__btn">Join</button>
+                    </form>
                 </div>
             </div>
             <div class="footer__bottom">
-                <p>&copy; 2025 TechHub. All rights reserved.</p>
+                <p>&copy; 2026 TechHub. All rights reserved.</p>
             </div>
         </div>
     </footer>

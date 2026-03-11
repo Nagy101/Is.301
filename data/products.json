@@ -50,25 +50,25 @@
     },
     {
       "id": 3,
-      "name": "USB-C Cable 3-Pack",
-      "category": "Cables",
+      "name": "Mechanical Gaming Keyboard",
+      "category": "Keyboards",
       "price": 24.99,
       "rating": 4.5,
       "reviews": 512,
-      "image": "https://images.unsplash.com/photo-1591290621749-7a3f3d1d4efb?w=400&q=80",
+      "image": "https://images.unsplash.com/photo-1625948515291-69613efd103f?w=400&q=80",
       "images": [
-        "https://images.unsplash.com/photo-1591290621749-7a3f3d1d4efb?w=400&q=80",
+        "https://images.unsplash.com/photo-1625948515291-69613efd103f?w=400&q=80",
         "https://images.unsplash.com/photo-1625948515291-69613efd103f?w=400&q=80"
       ],
       "description": "Durable and fast-charging USB-C braided cables in 3 different lengths.",
       "specs": [
-        "3 lengths: 3ft / 6ft / 10ft",
-        "Fast charging support",
-        "Braided design",
-        "USB-IF certified",
-        "Lifetime warranty"
+        "Mechanical switches",
+        "RGB lighting",
+        "1ms response time",
+        "Aluminum frame",
+        "USB-C connection"
       ],
-      "sku": "CABLE-USBC-3PK",
+      "sku": "KB-MECH-RGB",
       "inStock": true
     },
     {

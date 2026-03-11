@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Details - TechHub</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
@@ -14,6 +16,7 @@
                 <div class="navbar__logo">
                     <a href="index.html">TechHub</a>
                 </div>
+                <button id="mobile-menu-btn" aria-label="Toggle Menu">☰</button>
                 <ul class="navbar__menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="shop.html">Shop</a></li>
@@ -21,23 +24,28 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
                 <div class="navbar__actions">
-                    <button id="search-toggle" class="navbar__btn">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/>
-                            <path d="M14 14l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <button id="search-toggle" class="navbar__btn" aria-label="Search">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" />
+                            <path d="M20 20L16 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                         </svg>
                     </button>
-                    <a href="cart.html" class="navbar__cart">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M3 2h1l1.5 9h10l1-5h-12l-1-2h14v1l-2 10h-11l-1.5-13z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                    <a href="cart.html" class="navbar__cart" aria-label="Cart">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M4 4h2l2 11h10l2-7H6" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                            <circle cx="9" cy="19" r="1.5" stroke="currentColor" fill="none" stroke-width="2" />
+                            <circle cx="17" cy="19" r="1.5" stroke="currentColor" fill="none" stroke-width="2" />
                         </svg>
                         <span id="cart-count" class="cart-badge">0</span>
                     </a>
                 </div>
             </div>
         </nav>
-        <div id="search-bar" class="search-bar" style="display: none;">
-            <input type="text" id="search-input" placeholder="Search products..." class="search-bar__input">
+        <div id="search-bar" class="search-bar">
+            <div class="search-bar__container">
+                <input type="text" id="search-input" placeholder="Search products..." class="search-bar__input">
+            </div>
         </div>
     </header>
 
@@ -47,7 +55,7 @@
             <!-- Image Gallery -->
             <div class="product-gallery">
                 <div class="gallery-main">
-                    <img id="main-image" src="/placeholder.svg" alt="Product" class="gallery-main__image">
+                    <img id="main-image" src="" alt="Product" class="gallery-main__image">
                 </div>
                 <div class="gallery-thumbs" id="gallery-thumbs">
                     <!-- Thumbnails loaded by JS -->
@@ -56,21 +64,19 @@
 
             <!-- Product Info -->
             <div class="product-info">
-                <a href="shop.html" class="product-info__back">&larr; Back to Shop</a>
+                <a href="shop.html" class="product-info__back">&larr; Back to Shop Collection</a>
                 <h1 id="product-title" class="product-info__title"></h1>
                 <div class="product-info__rating">
-                    <span class="product-info__stars" id="product-stars">★★★★★</span>
-                    <span class="product-info__reviews">(<span id="review-count">245</span> reviews)</span>
+                    <span class="product-info__stars stars" id="product-stars">★★★★★</span>
+                    <span class="product-info__reviews reviews" id="review-count">(0 reviews)</span>
                 </div>
 
-                <div class="product-info__price">
-                    <span class="price" id="product-price"></span>
-                </div>
+                <div class="product-info__price" id="product-price"></div>
 
                 <p id="product-description" class="product-info__description"></p>
 
                 <div class="product-info__specs">
-                    <h3>Specifications</h3>
+                    <h3 style="margin-bottom:0.5rem;">Specifications</h3>
                     <ul id="product-specs">
                         <!-- Specs loaded by JS -->
                     </ul>
@@ -82,29 +88,37 @@
                         <input type="number" id="qty-input" value="1" min="1" max="99" class="qty-input">
                         <button id="qty-increase" class="qty-btn">+</button>
                     </div>
-                    <button id="add-to-cart-btn" class="btn btn--primary">Add to Cart</button>
+                    <button id="add-to-cart-btn" class="btn btn--primary" style="flex: 1;">
+                        Add to Cart
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="ml-2">
+                            <path d="M4 4h2l2 11h10l2-7H6" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </button>
                 </div>
 
                 <div class="product-info__details">
                     <p><strong>SKU:</strong> <span id="product-sku"></span></p>
-                    <p><strong>In Stock:</strong> <span id="product-stock" class="stock-status stock-status--in">Yes</span></p>
-                    <p><strong>Free Shipping:</strong> On orders over $50</p>
+                    <p><strong>Availability:</strong> <span id="product-stock" class="stock-status"></span></p>
+                    <p><strong>Shipping:</strong> Free shipping on orders over $50</p>
                 </div>
 
-                <div class="product-info__share">
-                    <p>Share this product:</p>
-                    <button class="share-btn">Facebook</button>
-                    <button class="share-btn">Twitter</button>
-                    <button class="share-btn">Copy Link</button>
+                <div class="product-info__share" style="margin-top: 1rem;">
+                    <p style="margin-bottom: 0.5rem; font-weight: 500;">Share this product:</p>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button class="btn btn--secondary btn--icon">f</button>
+                        <button class="btn btn--secondary btn--icon">t</button>
+                        <button class="btn btn--secondary btn--icon">🔗</button>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
 
     <!-- Related Products -->
-    <section class="related">
-        <div class="related__container">
-            <h2 class="related__title">You Might Also Like</h2>
+    <section class="section related">
+        <div class="container related__container">
+            <h2 class="related__title text-center">You Might Also Like</h2>
             <div id="related-products" class="products-grid">
                 <!-- Related products loaded by JS -->
             </div>
@@ -116,8 +130,8 @@
         <div class="footer__container">
             <div class="footer__grid">
                 <div class="footer__col">
-                    <h4>About TechHub</h4>
-                    <p>Your trusted source for premium tech accessories since 2020.</p>
+                    <h4 class="text-gradient">TechHub</h4>
+                    <p>Your trusted source for premium, cutting-edge tech accessories since 2020.</p>
                 </div>
                 <div class="footer__col">
                     <h4>Quick Links</h4>
@@ -130,26 +144,27 @@
                 <div class="footer__col">
                     <h4>Customer Service</h4>
                     <ul>
-                        <li><a href="#shipping">Shipping Info</a></li>
-                        <li><a href="#returns">Returns</a></li>
-                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer__col">
                     <h4>Newsletter</h4>
                     <p>Subscribe for exclusive deals and new arrivals</p>
-                    <div class="newsletter">
-                        <input type="email" placeholder="Your email" class="newsletter__input">
-                        <button class="newsletter__btn">Subscribe</button>
-                    </div>
+                    <form class="newsletter">
+                        <input type="email" placeholder="Your email address" class="newsletter__input" required>
+                        <button type="submit" class="newsletter__btn">Join</button>
+                    </form>
                 </div>
             </div>
             <div class="footer__bottom">
-                <p>&copy; 2025 TechHub. All rights reserved.</p>
+                <p>&copy; 2026 TechHub. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="js/app.js"></script>
 </body>
+
 </html>

@@ -14,6 +14,7 @@
                 <div class="navbar__logo">
                     <a href="index.html">TechHub</a>
                 </div>
+                <button id="mobile-menu-btn" aria-label="Toggle Menu">☰</button>
                 <ul class="navbar__menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="shop.html">Shop</a></li>
@@ -21,32 +22,36 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
                 <div class="navbar__actions">
-                    <button id="search-toggle" class="navbar__btn">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/>
-                            <path d="M14 14l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <button id="search-toggle" class="navbar__btn" aria-label="Search">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+                            <path d="M20 20L16 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                         </svg>
                     </button>
-                    <a href="cart.html" class="navbar__cart">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M3 2h1l1.5 9h10l1-5h-12l-1-2h14v1l-2 10h-11l-1.5-13z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                    <a href="cart.html" class="navbar__cart" aria-label="Cart">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M4 4h2l2 11h10l2-7H6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="9" cy="19" r="1.5" stroke="currentColor" fill="none" stroke-width="2"/>
+                            <circle cx="17" cy="19" r="1.5" stroke="currentColor" fill="none" stroke-width="2"/>
                         </svg>
                         <span id="cart-count" class="cart-badge">0</span>
                     </a>
                 </div>
             </div>
         </nav>
-        <div id="search-bar" class="search-bar" style="display: none;">
-            <input type="text" id="search-input" placeholder="Search products..." class="search-bar__input">
+        <div id="search-bar" class="search-bar">
+            <div class="search-bar__container">
+                <input type="text" id="search-input" placeholder="Search products..." class="search-bar__input">
+            </div>
         </div>
     </header>
 
-    <!-- Shop Container -->
+    <!-- Shop Content -->
     <main class="shop">
         <div class="shop__container">
             <!-- Sidebar Filters -->
             <aside class="filters">
-                <h3 class="filters__title">Filters</h3>
+                <h3 class="filters__title">Filter by</h3>
                 
                 <div class="filter-group">
                     <h4 class="filter-group__title">Category</h4>
@@ -79,40 +84,22 @@
                             <input type="checkbox" data-filter="category" value="Accessories">
                             <span>Accessories</span>
                         </label>
-                        <label class="filter-option">
-                            <input type="checkbox" data-filter="category" value="Cameras">
-                            <span>Cameras</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" data-filter="category" value="Watches">
-                            <span>Watches</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" data-filter="category" value="Speakers">
-                            <span>Speakers</span>
-                        </label>
-                        <label class="filter-option">
-                            <input type="checkbox" data-filter="category" value="Mice">
-                            <span>Mice</span>
-                        </label>
                     </div>
                 </div>
 
                 <div class="filter-group">
-                    <h4 class="filter-group__title">Price Range</h4>
-                    <div class="price-slider">
-                        <input type="range" min="0" max="500" value="500" id="price-range" class="price-slider__input">
-                        <p class="price-slider__display">Up to $<span id="price-value">500</span></p>
-                    </div>
+                    <h4 class="filter-group__title">Max Price</h4>
+                    <input type="range" min="0" max="600" value="600" id="price-range" class="price-slider__input">
+                    <p class="price-slider__display">Up to $<span id="price-value">600</span></p>
                 </div>
 
                 <div class="filter-group">
                     <h4 class="filter-group__title">Sort By</h4>
                     <select id="sort-select" class="filter-select">
-                        <option value="featured">Featured</option>
+                        <option value="featured">Featured Relevance</option>
                         <option value="price-low">Price: Low to High</option>
                         <option value="price-high">Price: High to Low</option>
-                        <option value="newest">Newest</option>
+                        <option value="newest">Newest Arrivals</option>
                     </select>
                 </div>
 
@@ -122,14 +109,15 @@
             <!-- Products Grid -->
             <section class="products-section">
                 <div class="products-section__header">
-                    <h2>All Products</h2>
-                    <p id="product-count" class="products-section__count">Loading...</p>
+                    <h2>Shop Collection</h2>
+                    <p id="product-count" class="products-section__count">Loading items...</p>
                 </div>
                 <div id="products-grid" class="products-grid">
                     <!-- Products loaded by JS -->
                 </div>
-                <div id="no-products" class="no-products" style="display: none;">
-                    <p>No products found. Try adjusting your filters.</p>
+                <div id="no-products" style="display: none;">
+                    <h2>No items found</h2>
+                    <p>Adjust your filters or try searching for something else.</p>
                 </div>
             </section>
         </div>
@@ -140,8 +128,8 @@
         <div class="footer__container">
             <div class="footer__grid">
                 <div class="footer__col">
-                    <h4>About TechHub</h4>
-                    <p>Your trusted source for premium tech accessories since 2020.</p>
+                    <h4 class="text-gradient">TechHub</h4>
+                    <p>Your trusted source for premium, cutting-edge tech accessories since 2020.</p>
                 </div>
                 <div class="footer__col">
                     <h4>Quick Links</h4>
@@ -154,22 +142,22 @@
                 <div class="footer__col">
                     <h4>Customer Service</h4>
                     <ul>
-                        <li><a href="#shipping">Shipping Info</a></li>
-                        <li><a href="#returns">Returns</a></li>
-                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer__col">
                     <h4>Newsletter</h4>
                     <p>Subscribe for exclusive deals and new arrivals</p>
-                    <div class="newsletter">
-                        <input type="email" placeholder="Your email" class="newsletter__input">
-                        <button class="newsletter__btn">Subscribe</button>
-                    </div>
+                    <form class="newsletter">
+                        <input type="email" placeholder="Your email address" class="newsletter__input" required>
+                        <button type="submit" class="newsletter__btn">Join</button>
+                    </form>
                 </div>
             </div>
             <div class="footer__bottom">
-                <p>&copy; 2025 TechHub. All rights reserved.</p>
+                <p>&copy; 2026 TechHub. All rights reserved.</p>
             </div>
         </div>
     </footer>
